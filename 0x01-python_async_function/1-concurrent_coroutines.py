@@ -13,7 +13,7 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     int arguments (in this order): n and max_delay. You will spawn
     wait_random n times with the specified max_delay
     """
-    
+
     wait_times = await asyncio.gather(
         *tuple(map(lambda _: wait_random(max_delay), range(n)))
     )
