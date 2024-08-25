@@ -125,6 +125,7 @@ class TestGithubOrgClient(unittest.TestCase):
         client_has_licence = gh_org_client.has_license(repo, key)
         self.assertEqual(client_has_licence, expected)
 
+
 @parameterized_class([
     {
         'org_payload': TEST_PAYLOAD[0][0],
