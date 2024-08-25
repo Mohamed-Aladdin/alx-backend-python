@@ -161,8 +161,8 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         """to test GithubOrgClient.public_repos
         """
         self.assertEqual(
-        GithubOrgClient("google").public_repos(),
-        self.expected_repos,
+            GithubOrgClient("google").public_repos(),
+            self.expected_repos,
         )
 
     def test_public_repos_with_license(self) -> None:
@@ -171,8 +171,8 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         matches the expected value from the fixtures
         """
         self.assertEqual(
-        GithubOrgClient("google").public_repos(license="apache-2.0"),
-        self.apache2_repos,
+            GithubOrgClient("google").public_repos(license="apache-2.0"),
+            self.apache2_repos,
         )
 
     @classmethod
