@@ -95,21 +95,21 @@ class TestGithubOrgClient(unittest.TestCase):
                     "has_issues": True,
                     "forks": 32,
                     "default_branch": "master",
-                },
+                }
             ]
         }
         mock_get_json.return_value = test_payload["repos"]
         with patch(
             "client.GithubOrgClient._public_repos_url",
-            new_callable=PropertyMock,
+            new_callable=PropertyMock
         ) as mock_public_repos_url:
             mock_public_repos_url.return_value = test_payload["repos_url"]
             self.assertEqual(
                 GithubOrgClient("google").public_repos(),
                 [
                     "episodes.dart",
-                    "kratu",
-                ],
+                    "kratu"
+                ]
             )
             mock_public_repos_url.assert_called_once()
         mock_get_json.assert_called_once()
